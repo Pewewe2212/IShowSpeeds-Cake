@@ -1,0 +1,36 @@
+These items CANNOT be sold, shared, or put on any other website.
+
+They are sized for use in Smile Game Builder BUT can be used for 
+other Engines such as Unity, RPG Maker, and any other engine that
+uses 3D Models.
+
+These are multi-use for your many projects.
+
+Credits must be given to.. SDAssets ..with a link to where you got 
+this pack from.
+
+These models are not animated, doors dont open/close but we allow
+for them to be edited by you for animation, and texture changing
+but these new additions can NOT still be sold, put on other websites, 
+or shared freely.
+
+All models are created by SDAssets.
+
+-------------------------------------------------
+NOTE: The wall knives, beds and characters are NOT included in this pack
+-------------------------------------------------
+
+Due to Smile Game Builder limitations with models some models are in
+parts, such as the sink, cooker, and wall unit. In SGB you can place
+all the parts down, highlight them all, right click and choose Group 
+to put them all into one model for easier movement.
+
+-------------------------------------------------
+
+The Unedited builds folder contain blender files where the models are 
+not edited, they are the original builds before being edited for SGB.
+
+-------------------------------------------------
+
+Hope you enjoy these models.
+SDAssets
