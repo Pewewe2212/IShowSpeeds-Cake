@@ -21,11 +21,10 @@ public class PlayerScript : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
 
-        var moveInput = (new Vector3(HorizontalInput, 0, VerticalInput)).normalized;
-    }
+        // Liikesuunta suhteessa pelaajan forwardiin
+        Vector3 move = transform.right * HorizontalInput + transform.forward * VerticalInput;
 
-    /* private void FixedUpdate()
-     {
-         rb.AddForce(HorizontalInput * moveSpeed, 0, VerticalInput * moveSpeed);
-     }*/
+        // Asetetaan velocity (s�ilytet��n y-akselin arvo esim. gravitaatiolle)
+        rb.linearVelocity = new Vector3(move.x * moveSpeed, rb.linearVelocity.y, move.z * moveSpeed);
+    }
 }
