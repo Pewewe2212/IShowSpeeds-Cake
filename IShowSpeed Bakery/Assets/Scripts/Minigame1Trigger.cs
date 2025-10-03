@@ -9,7 +9,7 @@ public class Minigame1Trigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Keyboard.current.eKey.wasPressedThisFrame || Input.GetKeyDown("Jump"))
+            if (Keyboard.current.eKey.wasPressedThisFrame || Input.GetButtonDown("Jump"))
             {
                 game.isActive = true;
                 // Make it so the player can't move
