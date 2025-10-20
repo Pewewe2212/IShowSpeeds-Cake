@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Minigame1Trigger : MonoBehaviour
+public class Minigame2Trigger : MonoBehaviour
 {
-    public Minigame1 game;
+    public Minigame2 game;
     public GameObject gameObject_;
 
     private void OnTriggerStay(Collider other)

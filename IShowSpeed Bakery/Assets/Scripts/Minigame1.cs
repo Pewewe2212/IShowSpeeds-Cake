@@ -11,7 +11,7 @@ public class Minigame1 : MonoBehaviour
     [SerializeField] private bool isGameStarted;
 
     [Tooltip("Checks wether the game has been done once before, so you can't do the same minigame twice")]
-    [SerializeField] public bool hasThisGameBeenDone;
+    [SerializeField] public bool hasThisGameBeenDone = false;
 
     // Timer for making the minigame have a time limit
     [SerializeField] private float currentTimer;
@@ -23,7 +23,7 @@ public class Minigame1 : MonoBehaviour
     [SerializeField] public int score;
 
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameObject button; // The image of X and Space
+    [SerializeField] private GameObject button; // The image of A and Space
     [SerializeField] private GameObject ovenON;
 
     private void Start()
@@ -37,11 +37,19 @@ public class Minigame1 : MonoBehaviour
     {
         if (isActive && !hasThisGameBeenDone)
         {
-            Minigame();
             // Failsafe if you forget to add a goal time
             if (goalTime == 0)
             {
                 goalTime = 10;
+            }
+            Minigame();
+        }
+        if (hasThisGameBeenDone)
+        {
+            if (Keyboard.current.eKey.wasPressedThisFrame || Input.GetButtonDown("Jump"))
+            {
+                gameObject.SetActive(false);
+                FindFirstObjectByType<PlayerScript>().CanMove = true;
             }
         }
     }
@@ -81,13 +89,15 @@ public class Minigame1 : MonoBehaviour
 
                 if (score < 0) { score = 0; }
 
+                timerText.text = "Score: " + score.ToString();
+
                 hasThisGameBeenDone = true;
                 // Add something to increase the score
             }
         }
     }
 
-    // Call this when you turn the minigame off
+    // Call this when you get done with the order
     public void ResetGame()
     {
         isActive = false;
