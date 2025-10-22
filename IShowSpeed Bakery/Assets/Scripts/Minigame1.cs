@@ -17,14 +17,14 @@ public class Minigame1 : MonoBehaviour
     [SerializeField] private float currentTimer;
 
     [Tooltip("Add a goal time when the order is given")]
-    [SerializeField] private int goalTime;
+    [SerializeField] public int goalTime;
 
     [Tooltip("The score that you add to the final score")]
     [SerializeField] public int score;
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject button; // The image of A and Space
-    [SerializeField] private GameObject ovenON;
+    [SerializeField] private GameObject ovenON; // image of the oven being on
 
     private void Start()
     {
@@ -44,6 +44,7 @@ public class Minigame1 : MonoBehaviour
             }
             Minigame();
         }
+        // lets you leave if the game has been completed
         if (hasThisGameBeenDone)
         {
             if (Keyboard.current.eKey.wasPressedThisFrame || Input.GetButtonDown("Jump"))
@@ -57,7 +58,7 @@ public class Minigame1 : MonoBehaviour
     // The actual minigame
     private void Minigame()
     {
-        // Idea: Just start with something simple, press X or Space within a specific time frame
+        // Idea: Just start with something simple, press A or Space within a specific time frame
         if (isGameStarted)
         {
             currentTimer += Time.deltaTime;

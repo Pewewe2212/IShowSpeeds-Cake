@@ -8,9 +8,10 @@ public class Minigame2 : MonoBehaviour
     /// <summary>
     /// Objects appear on screen, click A/Space when the right item is on screen
     /// </summary>
-     
+
     // The minigame before this one, to make sure you did it before this minigame
-    [SerializeField] Minigame1 minigame1; 
+    [SerializeField] Minigame1 minigame1;
+    [SerializeField] Orders orders;
 
     [SerializeField] public int score;
 
@@ -28,9 +29,6 @@ public class Minigame2 : MonoBehaviour
     [Tooltip("What items is currently being shown")]
     [SerializeField] GameObject currentItem;
 
-    [Tooltip("What item is needed")]
-    [SerializeField] GameObject correctItem;
-
     private float timer;
 
 
@@ -43,7 +41,6 @@ public class Minigame2 : MonoBehaviour
             item.SetActive(false);
         }
         currentItem = items[Random.Range(0, items.Count)];
-        currentItem.SetActive(true);
     }
 
     private void Update()
@@ -65,6 +62,7 @@ public class Minigame2 : MonoBehaviour
     public void Minigame()
     {
         timer += Time.deltaTime;
+        currentItem.SetActive(true);
         if (timer > 3)
         {
             timer = 0;
@@ -74,7 +72,7 @@ public class Minigame2 : MonoBehaviour
         }
         if (Keyboard.current.spaceKey.wasPressedThisFrame || Input.GetButtonDown("Fire1"))
         {
-            if (currentItem == correctItem)
+            if (currentItem == orders.correctItem)
             {
                 score = 10;
             }
