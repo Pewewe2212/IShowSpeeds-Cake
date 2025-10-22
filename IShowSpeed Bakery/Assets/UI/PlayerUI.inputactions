@@ -1,0 +1,54 @@
+{
+    "name": "PlayerUI",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "0bea2aa9-16b0-47b6-9821-8c335671c049",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "878b81f9-cd68-4833-a5c3-2e7f7fba2da6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "2da9be31-fe22-4ea6-9625-1978027f1b47",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dbf100a4-7aa7-4d44-b7ba-5679c024e977",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b02d2002-97ef-496c-89d6-f609db68259e",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
