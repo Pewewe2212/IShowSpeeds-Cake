@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class Orders : MonoBehaviour
 {
@@ -29,7 +28,6 @@ public class Orders : MonoBehaviour
 
     public void GetOrder()
     {
-        // Minigame1 timer
         int time = mg1.goalTime = Random.Range(3, 10);
         correctItem = items[Random.Range(0, items.Count)];
 
@@ -50,17 +48,14 @@ public class Orders : MonoBehaviour
         mg2.ResetMinigame();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (Keyboard.current.eKey.wasPressedThisFrame || Input.GetButtonDown("Jump"))
+            if (!done)
             {
-                if (!done)
-                {
-                    done = true;
-                    GetOrder();
-                }
+                done = true;
+                GetOrder();
             }
         }
     }
