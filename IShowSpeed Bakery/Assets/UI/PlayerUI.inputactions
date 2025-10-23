@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "b34c6767-e179-4e0c-8259-c4edeb548137",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -24,18 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Look",
-                    "type": "PassThrough",
-                    "id": "2da9be31-fe22-4ea6-9625-1978027f1b47",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Cancel",
                     "type": "Button",
                     "id": "8ce73a62-f750-43b3-955c-44fd980775cc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Tracked Position",
+                    "type": "Button",
+                    "id": "f7e92b6f-87d8-4be2-b605-b4eb678d923a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -78,17 +78,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b02d2002-97ef-496c-89d6-f609db68259e",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ac021c8e-b2ca-4e1a-b574-4b44f58697f3",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
@@ -110,6 +99,61 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "9b7480fb-fbe4-4c90-82f2-73db9adfeec4",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "56454f6d-1050-432c-b516-991cc4f316e3",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "e68040a1-e7ae-4359-a48d-6e53802ea598",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "369368b9-b581-4930-91f9-d9559d1cb31e",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "bc832f89-5405-4cf5-9d48-6d9ca1661308",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c2747597-9af6-4353-95af-60d1773efefc",
                     "path": "<Gamepad>/buttonEast",
@@ -128,6 +172,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4de65049-0920-4b3a-9c5b-597ff62ea4b9",
+                    "path": "<XRController>/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tracked Position",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
