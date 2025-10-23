@@ -54,6 +54,7 @@ public class Minigame2 : MonoBehaviour
             if (Keyboard.current.eKey.wasPressedThisFrame || Input.GetButtonDown("Jump"))
             {
                 gameObject.SetActive(false);
+                currentItem.SetActive(false);
                 FindFirstObjectByType<PlayerScript>().CanMove = true;
             }
         }
@@ -88,6 +89,7 @@ public class Minigame2 : MonoBehaviour
     public void ResetMinigame()
     {
         gameObject.SetActive(false);
+        hasThisGameBeenDone = false;
         score = 0;
     }
 }

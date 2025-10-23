@@ -93,7 +93,6 @@ public class Minigame1 : MonoBehaviour
                 timerText.text = "Score: " + score.ToString();
 
                 hasThisGameBeenDone = true;
-                // Add something to increase the score
             }
         }
     }
@@ -103,9 +102,46 @@ public class Minigame1 : MonoBehaviour
     {
         isActive = false;
         isGameStarted = false;
+        hasThisGameBeenDone = false;
         button.SetActive(false);
         ovenON.SetActive(false);
         currentTimer = 0;
         score = 0;
+    }
+
+    // In case of emergency, my idea for a controller movement in the menu
+    float VerticalInput;
+    int thing;
+
+    private void ExUpdate()
+    {
+        VerticalInput = Input.GetAxis("Vertical");
+        // Make a short wait inbetween these // Wait(), private IEnumerator Wait() {yield return new WaitForSeconds(0.2)}
+        if (VerticalInput >= 0.1)
+        {
+            thing += 1;
+        }
+        else if (VerticalInput <= -0.1)
+        {
+            thing -= 1;
+        }
+
+        switch (thing)
+        {
+            case 0:
+                //Option 1
+                if (Input.GetButtonDown("Jump"))
+                {
+                    // Do the action chosen
+                }
+                break;
+            case 1:
+                //Option 2
+                if (Input.GetButtonDown("Jump"))
+                {
+                    // Do the action chosen
+                }
+                break;
+        }
     }
 }
